@@ -154,7 +154,7 @@ function doEdit(){
                 <button class="btns done">✔️</button>
                 <button class="btns cancel">❌</button> 
                 `
-                inputEdit = document.querySelectorAll('.spammer input')
+                inputEdit = document.querySelectorAll('.spammer input');
                 inputEdit[0].value = data.title;
                 inputEdit[1].value = data.author;
                 inputEdit[2].value = data.pages;
@@ -199,6 +199,7 @@ function doneEdit(){
     const done = document.querySelectorAll('.done');
     done.forEach(z => {
         z.addEventListener('click', () => {
+            inputEdit[2].value = inputEdit[2].value < 1 ? 1 : inputEdit[2].value;
             let text = z.parentNode.getAttribute('data-key');
             const t = z.parentNode;
             spammer[text] = {
