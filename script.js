@@ -3,14 +3,11 @@ const submit = document.querySelector('form button');
 const pages = document.querySelector('input:nth-child(3)');
 const box = document.querySelector('.spammers');
 const space = document.querySelector('.space');
+let inputEdit;
+let isEdit = false;
 
-let spammer = {
-    // spammer1: {
-    //     name: 'Patrick',
-    //     email: 'patrick.kigr3456789@gogle.tv',
-    //     phone: '0909090909'
-    // },
-}
+let spammer = {};
+
 pages.addEventListener('input', checkP);
 
 function checkBtns(){
@@ -19,7 +16,7 @@ function checkBtns(){
         if (el.classList.contains('modify')){
             doEdit();
         } else if (el.classList.contains('cancel')){
-            cancelEdit();
+            cancelEdit(el);
         }
     })
 }
@@ -40,7 +37,15 @@ function loadHTML(){
 
 window.addEventListener('load', loadHTML);
 
-submit.addEventListener('click', check)
+submit.addEventListener('click', check);
+
+function checkBtn(){
+    doneEdit()
+    cancelEdit();
+    doEdit();
+    delObj();
+    show();
+}
 
 function check(e){
     e.preventDefault();
@@ -93,8 +98,6 @@ function reset(){
     }
 }
 
-
-
 function delObj(){
     const del = document.querySelectorAll('.remove');
     const delAll = document.querySelector(('.remove-all button'));
@@ -135,55 +138,93 @@ function show(){
     saveObj();
 }
 
-
-
 function doEdit(){
     const edit = document.querySelectorAll('.modify');
     edit.forEach(btn =>  {
         btn.addEventListener('click', () => {
-            let key = btn.parentNode.getAttribute('data-key');
-            let text = btn.parentNode.getAttribute('data-key');
-            text = spammer[text];
-            console.log(btn, 'it just works');
-            let input = btn.parentElement;
-            // ❌✔️
-            input.innerHTML = 
-            `
-            <div class="spammer-name">
+            if (!isEdit){
+                let input = btn.parentElement;
+                let text = input.getAttribute('data-key');
+                let data = spammer[text];
+                input.innerHTML = 
+                `
                 <input type="text" name="titleE" placeholder="Title" class="mod namei edit">
-            </div>
-            <div class="address">
-                <input type="text" name="authorE" placeholder="Author" class="mod edit">
-            </div>
-            <div class="num">
-                <input type="number" name="pagesE" placeholder="Pages" class="mod edit">
-            </div>
-            <button class="btns done">✔️</button>
-            <button class="btns cancel">❌</button>
-            `
-            // const pages = document.querySelector('.spammer input:nth-child(3)')
-            // const cancel = document.querySelector('.spammer .cancel');
+                <input type="text" name="authorE" placeholder="Author" class="mod edit author">
+                <input type="number" name="pagesE" placeholder="Pages" class="mod edit page">
+                <button class="btns done">✔️</button>
+                <button class="btns cancel">❌</button> 
+                `
+                inputEdit = document.querySelectorAll('.spammer input')
+                inputEdit[0].value = data.title;
+                inputEdit[1].value = data.author;
+                inputEdit[2].value = data.pages;
+                isEdit = true;
+                checkBtn();
+            } else {
+                return;
+            }
         })
     })
 }
 
 function cancelEdit(){
-    let text = this.parentNode.getAttribute('data-key');
-    const t = this.parentNode;
-    text = spammer[text];
-    const html = 
-    `
-    <div class="spammer-name">
-        <h4>${text.title}</h4>
-    </div>
-    <div class="address">
-        <p>${text.author}</p>
-    </div>
-    <div class="num">
-        <p>${text.pages}</p>
-    </div>
-    <button class="btns modify">✏️</button>
-    <button class="btns remove">🚫</button>
-    `
-    t.innerHTML = html;
+    const cancel = document.querySelectorAll('.cancel');
+    cancel.forEach(z => {
+        z.addEventListener('click', () => {
+            let text = z.parentNode.getAttribute('data-key');
+            const t = z.parentNode;
+            text = spammer[text];
+            const html = 
+            `
+            <div class="spammer-name">
+                <h4>${text.title}</h4>
+            </div>
+            <div class="address">
+                <p>${text.author}</p>
+            </div>
+            <div class="num">
+                <p>${text.pages}</p>
+            </div>
+            <button class="btns modify">✏️</button>
+            <button class="btns remove">🚫</button>
+            `
+            t.innerHTML = html;
+            isEdit = false;
+            checkBtn();
+        })
+    })
+}
+
+function doneEdit(){
+    const done = document.querySelectorAll('.done');
+    done.forEach(z => {
+        z.addEventListener('click', () => {
+            let text = z.parentNode.getAttribute('data-key');
+            const t = z.parentNode;
+            spammer[text] = {
+                title: inputEdit[0].value,
+                author: inputEdit[1].value,
+                pages: inputEdit[2].value
+            }
+            text = spammer[text];
+            const html = 
+            `
+            <div class="spammer-name">
+                <h4>${text.title}</h4>
+            </div>
+            <div class="address">
+                <p>${text.author}</p>
+            </div>
+            <div class="num">
+                <p>${text.pages}</p>
+            </div>
+            <button class="btns modify">✏️</button>
+            <button class="btns remove">🚫</button>
+            `
+            t.innerHTML = html;
+            isEdit = false;
+            saveObj();
+            checkBtn();
+        })
+    })
 }

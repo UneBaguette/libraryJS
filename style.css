@@ -158,6 +158,18 @@ input {
     align-items: center;
 }
 
+.author {
+    width: 280px;
+}
+
+.page {
+    width: 120px;
+}
+
+.namei{
+    width: 110px;
+}
+
 .tel {
     display: flex;
     justify-content: center;
@@ -177,9 +189,7 @@ input {
 .spammer {
     background-color: #0000000e;
     height: 80px;
-    width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
     margin: 5px auto;
     border-bottom: 1px solid #00000046;
