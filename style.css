@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,700;0,800;0,900;1,500;1,700&display=swap');
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    width: 90%;
+
+}
+
+.logo img {
+    width: 150px;
+}
+
+form {
+    display: flex;
+    
+}
+
+.stop-spam button {
+    border: 0;
+    position: relative;
+    cursor: pointer;
+    width: 160px;
+    height: 40px;
+    background-color: #F6FF00;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: ease 200ms;
+}
+
+.stop-spam button:hover{
+    color: #FFF;
+    font-size: 15px;
+    background-color: #dbe200;
+}
+
+.stop-spam button:active{
+    background-color: #b8b800;
+}
+
+main {
+    height: 580px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info-spam {
+    display: none;
+    border-radius: 5px;
+    right: 95px;
+    top: 70px;
+    border: 1px solid #00000002;
+    background-color: #000000a6;
+    text-align: center;
+    width: 160px;
+    position: absolute;
+}
+
+.info-spam p{
+    color: #FFF;
+    font-size: 14px;
+}
+
+.title h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    margin: 5px 5px;
+    padding: 5px;
+}
+
+.mod {
+    width: 140px;
+}
+
+.unwanted-mail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 60px auto;
+}
+
+.spammers {
+    position: relative;
+    border: 2px solid #000;
+    width: 670px;
+    height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+
+.placeholder {
+    position: absolute;
+    color: #00000065;
+    width: 80px;
+    z-index: 5;
+    top:50%;
+    left: 28%;
+}
+
+
+.option {
+    background-color: #FFF;
+    overflow: hidden;
+    border-bottom: 1px solid #0000003d;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 650px;
+}
+
+.name-tag {
+    border-right: 1px solid #0000003d;
+    width: 120px;
+}
+
+.name {
+    margin-right: 50px;
+    padding: 5px;
+}
+
+.mail-tag {
+    border-right: 1px solid #0000003d;
+    width: 300px;
+}
+
+.mail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tel {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+}
+
+.space-text {
+    margin: auto 55px;
+}
+
+
+.space {
+    padding-top: 30px;
+}
+
+
+.spammer {
+    background-color: #0000000e;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px auto;
+    border-bottom: 1px solid #00000046;
+}
+
+.spammer-name{
+    width: 120px;
+    white-space: normal;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.address {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+}
+
+.btns {
+    height: 40px;
+    width: 40px;
+    margin-right: 5px;
+}
+
+button{
+    cursor: pointer;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.num{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+}
+
+.info {
+    display: flex;
+
+}
