@@ -1,6 +1,6 @@
 const input = document.querySelectorAll('.no-spam input');
 const submit = document.querySelector('form button');
-const pages = document.querySelectorAll('input:nth-child(3)');
+const pages = document.querySelector('input:nth-child(3)');
 const box = document.querySelector('.spammers');
 const space = document.querySelector('.space');
 
@@ -11,9 +11,7 @@ let spammer = {
     //     phone: '0909090909'
     // },
 }
-pages.forEach(c => {
-    c.addEventListener('input', checkP);
-})
+pages.addEventListener('input', checkP);
 
 function checkBtns(){
     const buttons = document.querySelectorAll('.spammers button');
