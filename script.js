@@ -10,17 +10,6 @@ let spammer = {};
 
 pages.addEventListener('input', checkP);
 
-function checkBtns(){
-    const buttons = document.querySelectorAll('.spammers button');
-    buttons.forEach(el => {
-        if (el.classList.contains('modify')){
-            doEdit();
-        } else if (el.classList.contains('cancel')){
-            cancelEdit(el);
-        }
-    })
-}
-
 function checkP(){
     return pages.value = pages.value < 1 ? 1 : pages.value;
 }
