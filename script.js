@@ -30,7 +30,7 @@ function loadHTML(){
     const data = JSON.parse(window.localStorage.getItem('data'));
     spammer = data;
     Object.keys(spammer).map(key => add(spammer[key], key));
-    Object.keys(spammer).map(key => doEdit(spammer[key], key));
+    doEdit();
     show();
     delObj();
 }
