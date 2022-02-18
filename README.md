@@ -6,4 +6,4 @@
 
 # Procédure
 
-<p>J'ai pu rencontrer plusieurs soucis, mais plus dans la mise en oeuvre de fonctionnalité en JS, le localStorage était très facile à prendre en main. Mais généralement, je faisais tout moins même autrement c'était un peu de stackoverflow, et les cours. C'était un peu dure la partie update de la bibliotèque, mais cette partie j'ai pour le coup réaliser tout seul.</p>
+<p>J'ai pu rencontrer plusieurs soucis, mais plus dans la mise en oeuvre de fonctionnalité en JS, le localStorage était très facile à prendre en main. Mais généralement, je faisais tout moi même et autrement c'était un peu de stackoverflow, et les cours. C'était un peu dure la partie update de la bibliotèque, mais cette partie j'ai pour le coup réaliser tout seul.</p>
