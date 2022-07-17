@@ -14,7 +14,6 @@ html, body {
 body {
     font-family: 'Rubik', sans-serif;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
@@ -46,14 +45,13 @@ form {
     background-color: #F6FF00;
     padding: 10px;
     border-radius: 10px;
-    font-size: 16px;
-    transition: ease 200ms;
+    font-size: 1rem;
+    transition: ease 150ms;
 }
 
 .stop-spam button:hover{
-    color: #FFF;
-    font-size: 15px;
-    background-color: #dbe200;
+    font-size: 0.92rem;
+    background-color: #cbd200;
 }
 
 .stop-spam button:active{
@@ -61,7 +59,6 @@ form {
 }
 
 main {
-    height: 580px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -110,20 +107,19 @@ input {
 .spammers {
     position: relative;
     border: 2px solid #000;
-    width: 670px;
+    width: 672px;
     height: 400px;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow: auto;
     white-space: nowrap;
 }
 
 .placeholder {
     position: absolute;
     color: #00000065;
-    width: 80px;
     z-index: 5;
     top:50%;
-    left: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 
@@ -133,8 +129,8 @@ input {
     border-bottom: 1px solid #0000003d;
     display: flex;
     align-items: center;
-    position: absolute;
-    width: 650px;
+    position: sticky;
+    top: 0;
 }
 
 .name-tag {
@@ -160,10 +156,12 @@ input {
 
 .author {
     width: 280px;
+    text-align: center;
 }
 
 .page {
     width: 120px;
+    text-align: center;
 }
 
 .namei{
@@ -182,7 +180,7 @@ input {
 
 
 .space {
-    padding-top: 30px;
+    padding-top: 5px;
 }
 
 
@@ -220,6 +218,10 @@ button{
     cursor: pointer;
     padding: 5px;
     margin-right: 5px;
+}
+
+.remove-all button {
+    margin: 2vh;
 }
 
 .num{
